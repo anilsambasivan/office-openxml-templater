@@ -1,0 +1,103 @@
+<html>
+<head>
+    <!--polyfills for IE11-->
+    <script crossorigin src="https://unpkg.com/core-js-bundle@3.3.2/minified.js"></script>
+    <!--dependencies-->
+    <script crossorigin src="https://unpkg.com/jszip/dist/jszip.min.js"></script>
+    <!--library-->
+    <script src="dist/office-openxml-templater.js"></script>
+</head>
+<body>
+	<input id="files" type="file" id="files"/>    <button id="loadButton">load</button>
+    <div id="doc">
+    </div>
+
+    <script>
+
+        document.getElementById("loadButton").addEventListener("click", loadDocx);
+
+        function loadDocx() {
+            var file = document.getElementById("files").files[0];
+            var container = document.getElementById("doc");
+            const dataSet = [
+                    {
+                        invoice_number: 'EMI-IN-290813',
+                        todays_date: '10/10/2010',
+                        due_date: '10/10/2010',
+                        from_name: 'Anil',
+                        from_company_name: 'Emids Tech',
+                        from_street_address: 'Bommanahalli',
+                        from_city: 'Bangalore',
+                        from_street: '10/9120',
+                        from_zip_code: '560068',
+                        from_phone: '0809089670',
+                        to_name: 'Sambasivan',
+                        to_company_name: 'One Tech',
+                        to_street_address: 'Some Street',
+                        to_city: 'Bangalore',
+                        to_street: '10/2089',
+                        to_zip_code: '560068',
+                        to_account_number: '28763582365892',
+                        to_phone: '0809089670',
+                        bank_name: 'South INdian Bank Ltd',
+                        bank_address: 'Indira Nagar',
+                        bank_swift_code: 'SWFT-98798',
+                        bank_iban_number: 'IBAN-7998070',
+                        email_id: 'anil.sambasivan@emids.com',
+                    },
+                    {
+                        invoice_number: 'EMI-IN-290889',
+                        todays_date: '26/01/2020',
+                        due_date: '10/10/2021',
+                        from_name: 'Some one',
+                        from_company_name: 'Emids Tech',
+                        from_street_address: 'Bommanahalli',
+                        from_city: 'Bangalore',
+                        from_street: '10/9120',
+                        from_zip_code: '560068',
+                        from_phone: '0809089670',
+                        to_name: 'Someone X',
+                        to_company_name: 'One Tech',
+                        to_street_address: 'Some Street',
+                        to_city: 'Bangalore',
+                        to_street: '10/2089',
+                        to_zip_code: '560068',
+                        to_account_number: '28763582365892',
+                        to_phone: '0809089670',
+                        bank_name: 'South INdian Bank Ltd',
+                        bank_address: 'Indira Nagar',
+                        bank_swift_code: 'SWFT-98798',
+                        bank_iban_number: 'IBAN-7998070',
+                        email_id: 'anil.sambasivan@emids.com',
+                    },
+                    {
+                        invoice_number: 'EMI-IN-290813',
+                        todays_date: '10/10/2010',
+                        due_date: '10/10/2010',
+                        from_name: 'Anil',
+                        from_company_name: 'Emids Tech',
+                        from_street_address: 'Bommanahalli',
+                        from_city: 'Bangalore',
+                        from_street: '10/9120',
+                        from_zip_code: '560068',
+                        from_phone: '0809089670',
+                        to_name: 'Sambasivan',
+                        to_company_name: 'One Tech',
+                        to_street_address: 'Some Street',
+                        to_city: 'Bangalore',
+                        to_street: '10/2089',
+                        to_zip_code: '560068',
+                        to_account_number: '28763582365892',
+                        to_phone: '0809089670',
+                        bank_name: 'South INdian Bank Ltd',
+                        bank_address: 'Indira Nagar',
+                        bank_swift_code: 'SWFT-98798',
+                        bank_iban_number: 'IBAN-7998070',
+                        email_id: 'anil.sambasivan@emids.com',
+                    }
+                ];
+            docx.generate(file, dataSet, "Invoice - Emids.docx");
+        }
+    </script>
+</body>
+</html>
